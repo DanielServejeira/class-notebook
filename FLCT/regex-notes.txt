@@ -1,0 +1,9 @@
+
+* -> permite com que o caractere (ou grupo) exista n vezes (e fechamento do grupo)
+| -> pipe = união de termos (um ou outro)
+{} -> restringe a quantidade de caracteres do grupo de caracteres
+c (caractere fora dos parênteses) -> precisa ser colocado
+
+^[A-Za-z]*$ -> expressão para representar n caracteres
+^[A-Za-z_][A-za-z0-9_]*$  -> expressão para representar letras e underline no primeiro caractere e letras e números e underline no restante
+
