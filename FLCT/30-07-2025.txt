@@ -1,0 +1,39 @@
+instalar JFLAP: https://www.jflap.org/jflaptmp/
+
+^ -> operador de início da expressão
+$ -> operador de fim da expressão
+
+^[1-9]$ -> representa um dígito entre 1 e 9
+
+() -> usado para representar um dígito ex: (a|b)
+[] -> usado para representar intervalo de caracteres válidos ex: [0-9]
+{} -> usado para representar o intervalo da quantidade de caracteres que um caractere/grupo pode ter
+ex: (a|b){2,5}
+obs: {} substitui a repetição de termos da seguinte forma:
+^(a|b){2}$ substitui ^((a|b)(a|b))$
+
+exemplo: ^(a|b)*ccc$
+"O que faz o operador * nessa expressão?"
+
+| -> operador pipe no início do parênteses principal permite a inserção de nenhum termo
+ex: ^(|(a|b)(a|b))$
+
+https://tools.lymas.com.br/regexp_br.php
+desafios, faça:
+a) somente a palavra aa RESPOSTA: ^aa$
+b) iniciam com b seguido por 0 ou mais a RESPOSTA: ^b0a*$
+c) formada por a ou por b RESPOSTA: ^(a|b)$
+d) formada por qualquer quantidade de a ou b, inclusive nenhuma vez RESPOSTA: ^(a|b)$
+e) contém aa como elemento RESPOSTA: ^([a-z]*|[A-Z]*)aa([a-z]*|[A-Z]*)$
+f) todas as palavras contendo exatamente 2 b´s RESPOSTA: ^([a-z]*-b|[A-Z]*-B)(bb|BB)([a-z]*-b|[A-Z]*-B)$
+g)  terminam com aa ou bb RESPOSTA: ^([a-z]*|[A-Z]*)(aa|bb)$
+
+Autômatos finitos em JFLAP 
+conjunto de estado: grafo orientado
+estado: bolinha, estado da expressão, onde está e o que pode fazer
+aresta: transição de estado que reconhece um símbolo
+estado inicial: onde começa a reconhecer a cadeia
+estado final: onde termina (ou pode terminar) de reconhecer a cadeia
+
+ATENÇÃO: em uma concatenação, só pode ter um símbolo por transição de estado
+
