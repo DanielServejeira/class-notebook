@@ -1,0 +1,57 @@
+Gramática:
+
+terminal: minúsculo
+não-terminal (variável): maiúsculo
+
+S -> aS
+S -> bA
+S -> vazio
+A -> c
+
+permite strings 'a', 'aaa', 'abc' etc.
+
+{0^n1^n | n ≥ 1}.
+“o conjunto de 0 elevado a n 1 elevado a n tal que n maior ou igual a 1”;
+
+1. Descreva as linguagens denotadas pelas ER’s abaixo sobre o alfabeto
+Σ = {0,1}.
+a- 0 | 10*
+"começa com zero ou começa com um e termina com n zeros, inclusive nenhum"
+b- (0 | 1)0*
+"começa com zero ou um e termina com n zeros, inclusive nenhum"
+c- (0011)*
+"possui o conjunto 0011 n vezes, inclusive nenhuma"
+d- (0 | 1)* 1(0 | 1)*
+"comeca com zero ou um n vezes, seguido de um e termina com zero ou um n vezes, inclusive nenhuma"
+e- 0*11*0
+"começa com zero n vezes, inclusive nenhuma, seguido de um, seguido de um n vezes, inclusive nenhuma e termina com zero"
+f- 0(0 | 1)*0
+"começa com zero, seguido de zero ou um n vezes, inclusive nenhuma e termina com zero"
+g- (ε + 0) (ε | 1)
+"começa com zero ou nenhum, seguido de um ou nenhum"
+h- (000* | 1)*
+"começa com o conjunto 000 n vezes, inclusive nenhuma, ou com um n vezes, inclusive nenhuma"
+i- ( 0* | 0*11 (1 | 00*11)*) (ε | 00* )
+"começa com zero n vezes, inclusive nenhuma, ou começa com zero n vezes, inclusive nenhuma, seguido de 11, seguido de um n vezes, inclusive nenhuma, ou 0011 n vezes, inclusive nenhuma, seguido de 00 n vezes, inclusive nenhuma"
+
+2. Sobre o Σ={a,b}, defina expressões regulares que representam as linguagens
+cujas sentenças estão descritas a seguir:
+a- Possuem comprimento maior ou igual a 3;
+(a|b){3,}
+b- Possuem comprimento menor ou igual a 3;
+(a|b){0,3}
+c- Possuem comprimento diferente de 3;
+((a|b){0,2}|(a|b){4,})
+d- Possuem comprimento par;
+(aa|ab|ba|bb)*
+e- Possuem comprimento ímpar;
+(aa|ab|ba|bb)*(a|b)
+f- Possuem comprimento múltiplo de 4.
+(((aa|ab|ba|bb)(aa|ab|ba|bb))*(aa|ab|ba|bb)(aa|ab|ba|bb))*
+
+3. Fazer o conjunto de exercícios da seção 3.1 do livro do HOPCROFT, páginas
+96 e 97.
+
+4. Faça um simulador para Expressões Regulares (qualquer linguagem de
+programação)
+
