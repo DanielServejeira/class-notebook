@@ -51,6 +51,19 @@ f- Possuem comprimento múltiplo de 4.
 
 3. Fazer o conjunto de exercícios da seção 3.1 do livro do HOPCROFT, páginas
 96 e 97.
+Exercício 3.1.1: Escreva expressões regulares correspondentes às seguintes linguagens:
+a) O  conjunto de strings sobre o alfabeto [a,b,c] que contém pelo menos um a e pelo menos um b.
+((a|b|c)*a(a|b|c)*b(a|b|c)*|(a|b|c)*b(a|b|c)*a(a|b|c)*)
+b) O conjunto de strings de 0's e 1's cujo décimo símbolo a partir da extremidade direita é 1.
+((0|1){1,9}|(0|1){1,9}11*)
+c) O conjunto de strings de 0's e 1's com no máximo um par de 1's consecutivos.
+(1){0,2}(0|01|001|010|011)*
+
+Exercício 3.1.2: Escreva expressões regulares correspondentes às seguintes linguagens:
+a) O conjunto de todas os strings de 0's e 1's tais que todo par de 0's adjacentes aparece antes de qualquer par de 1's adjacentes.
+((0*|1)|(0*|1)(((00){1,}(11)*)|1)(0*|1)) INCOMPLETO
+b) O conjunto de strings de 0's e 1's cujo número de 0's é divisível por 5
+
 
 4. Faça um simulador para Expressões Regulares (qualquer linguagem de
 programação)
