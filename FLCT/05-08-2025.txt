@@ -61,9 +61,9 @@ c) O conjunto de strings de 0's e 1's com no máximo um par de 1's consecutivos.
 
 Exercício 3.1.2: Escreva expressões regulares correspondentes às seguintes linguagens:
 a) O conjunto de todas os strings de 0's e 1's tais que todo par de 0's adjacentes aparece antes de qualquer par de 1's adjacentes.
-((0*|1)|(0*|1)(((00){1,}(11)*)|1)(0*|1)) INCOMPLETO
+((0*|0*1|1)|(0*|0*1|1)0{2,}(11){0,1}(0*|0*1|1))
 b) O conjunto de strings de 0's e 1's cujo número de 0's é divisível por 5
-
+((1*)0(1*)0(1*)0(1*)0(1*)0(1*))*
 
 4. Faça um simulador para Expressões Regulares (qualquer linguagem de
 programação)
