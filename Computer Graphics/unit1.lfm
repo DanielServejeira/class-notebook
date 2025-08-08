@@ -16,19 +16,31 @@ object Form1: TForm1
     OnMouseMove = Image1MouseMove
     OnMouseUp = Image1MouseUp
   end
-  object Label1: TLabel
+  object XLabel: TLabel
     Left = 160
     Height = 15
     Top = 272
     Width = 10
     Caption = 'X:'
   end
-  object Label2: TLabel
-    Left = 224
+  object YLabel: TLabel
+    Left = 240
     Height = 15
     Top = 272
     Width = 10
     Caption = 'Y:'
+  end
+  object XValue: TLabel
+    Left = 178
+    Height = 1
+    Top = 272
+    Width = 1
+  end
+  object YValue: TLabel
+    Left = 256
+    Height = 1
+    Top = 272
+    Width = 1
   end
   object MainMenu1: TMainMenu
     Left = 496

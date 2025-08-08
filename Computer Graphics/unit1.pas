@@ -14,8 +14,10 @@ type
 
   TForm1 = class(TForm)
     Image1: TImage;
-    Label1: TLabel;
-    Label2: TLabel;
+    XLabel: TLabel;
+    YLabel: TLabel;
+    XValue: TLabel;
+    YValue: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
@@ -32,12 +34,13 @@ type
   private
 
   public
-    operation: Integer;
-    draw: boolean;
+
   end;
 
 var
   Form1: TForm1;
+  operation: Integer;
+  draw: boolean;
 
 implementation
 
@@ -59,7 +62,7 @@ procedure TForm1.Image1MouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
      if(operation = 1) then draw := true;
-     if(operation = 2) then Image1.Canvas.LineTo[X,Y];
+     if(operation = 2) then Image1.Canvas.LineTo(X,Y);
 end;
 
 procedure TForm1.Image1MouseMove(Sender: TObject; Shift: TShiftState; X,
@@ -71,11 +74,22 @@ end;
 procedure TForm1.Image1MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
+     Image1.Canvas.Pen.Color := clred;
+
      if(operation = 1) then draw := false;
      if(operation = 2) then
      begin
-       Image1.Canvas.Pen.Color := clred;
-       Image1.Canvas.LineTo[X,Y];
+       if(x1 < x2) then inc = 1
+       else inc = -1;
+
+       x=x1;
+       y=y1;
+       while (x != x2) do
+       begin
+         y = m(x-x1)+y1;
+         Image1.Canvas.Pixels(X,Y);
+         x = x+inc;
+       end;
      end;
 end;
 
