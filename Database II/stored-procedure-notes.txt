@@ -1,0 +1,55 @@
+procedures são funções (diferença entre procedure e function?)
+são armazenadas em servidor para evitar tráfego de rede e manter altas velocidades nas operações
+
+obs: por que usar DELIMITER?
+porque, usando o delimiter, o delimitador de comandos padrão (;) não é mais interpretado pelo MYSQL, e sim passado para o servidor, que é o objetivo final, já que procedures são tratados no servidor, e não rodados localmente
+
+procedures são (até onde eu vi agora) usadas para tratar regras de negócio
+
+variáveis de usuário: @nome-variável
+semelhante a variáveis locais
+exemplo: 
+DELIMITER $$
+CREATE PROCEDURE simple_proc(IN parametro_de_entrada INT, IN id INT)
+BEGIN
+    DECLARE local_variable INT DEFAULT parametro_de_entrada;
+    UPDATE test_table SET number = local_variable WHERE id = test_id;
+END $$
+
+desvios condicionais e iterações:
+IF <condicao> THEN <operacao> ELSE <operacao> END IF
+
+CASE <opcao> WHEN <value> THEN <operacao> ELSE <operacao> END CASE obs: semelhante ao switch case
+
+REPEAT <operacao> UNTIL <condicao> END REPEAT
+
+WHILE <condicao> DO <operacao> END WHILE
+
+manipuladores e cursores 
+tratamento de erros
+exemplo: 
+DECLARE <nome_condicao> CONDITION FOR <valor_condicao>
+<valor_condicao>:
+SQLSTATE <valor> sqlstate_value | mysql_error_code
+
+O nome pode ser subsequentemente usado em uma instrução DECLARE HANDLER.
+
+manipuladores CONTINUE e EXIT
+exemplo:
+CREATE PROCEDURE test.sp_2(IN num CHAR(1))
+BEGIN
+	DECLARE EXIT HANDLER FOR SQLWARNING
+	BEGIN
+		SELECT 'O dado foi truncado!' AS Msg;
+	END;
+	INSERT INTO test.tbl_1 SET id =num;
+END;
+
+cursores
+objeto que permite o processamento de resultados de consultas SQL linha por linha. Ele atua como um ponteiro que se move através das linhas retornadas por uma consulta, permitindo que você execute operações específicas em cada linha individualmente
+não são sensitivos, somente leitura e não rolantes
+semelhantes ao JUMP do assembly?
+exemplo:
+DECLARE cursor_name CURSOR FOR sql_statement
+OPEN, FETCH e CLOSE
+

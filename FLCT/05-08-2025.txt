@@ -67,11 +67,11 @@ b) O conjunto de strings de 0's e 1's cujo número de 0's é divisível por 5
 
 Exercício 3.1.3: Escreva expressões regulares correspondentes às seguintes linguagens:
 a) O conjunto de todos os strings de 0's e 1's que não contêm 101 como um substring.
-
+Não foi possível completar o exercício
 b) O conjunto de todos os strings com um número igual de 0's e 1's, tais que nenhum prefixo tenha dois 0's a mais que os 1's, nem dois 1's a mais que os 0's.
-
+Não foi possível completar o exercício
 c) O conjunto de strings de 0's e 1's cujo número de 0's é divisível por 5 e cujo número de 1's é par.
+Não foi possível completar o exercício
 
-4. Faça um simulador para Expressões Regulares (qualquer linguagem de
-programação)
+4. Faça um simulador para Expressões Regulares (qualquer linguagem de programação)
 
