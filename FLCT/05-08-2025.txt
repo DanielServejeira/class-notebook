@@ -16,23 +16,23 @@ permite strings 'a', 'aaa', 'abc' etc.
 1. Descreva as linguagens denotadas pelas ER’s abaixo sobre o alfabeto
 Σ = {0,1}.
 a- 0 | 10*
-"linguagem que começa com zero ou começa com um e termina com n zeros, inclusive nenhum"
+"Linguagem que começa com zero ou começa com um e termina com n zeros, inclusive nenhum"
 b- (0 | 1)0*
-"linguagem que começa com zero ou um e termina com n zeros, inclusive nenhum"
+"Linguagem que começa com zero ou um e termina com n zeros, inclusive nenhum."
 c- (0011)*
-"linguagem que possui o conjunto 0011 n vezes, inclusive nenhuma"
+"Linguagem que possui o conjunto 0011 n vezes, inclusive nenhuma."
 d- (0 | 1)* 1(0 | 1)*
-"linguagem que comeca com zero ou um n vezes, seguido de um e termina com zero ou um n vezes, inclusive nenhuma"
+"Linguagem que comeca com zero ou um n vezes, seguido de um e termina com zero ou um n vezes, inclusive nenhuma."
 e- 0*11*0
-"linguagem que começa com zero n vezes, inclusive nenhuma, seguido de um, seguido de um n vezes, inclusive nenhuma e termina com zero"
+"Linguagem que começa com zero n vezes, inclusive nenhuma, seguido de um, seguido de um n vezes, inclusive nenhuma e termina com zero."
 f- 0(0 | 1)*0
-"linguagem que começa com zero, seguido de zero ou um n vezes, inclusive nenhuma e termina com zero"
+"Linguagem que começa com zero, seguido de zero ou um n vezes, inclusive nenhuma e termina com zero."
 g- (ε + 0) (ε | 1)
-"linguagem que começa com zero ou nenhum, seguido de um ou nenhum"
+"Linguagem que começa com zero ou nenhum, seguido de um ou nenhum."
 h- (000* | 1)*
-"linguagem que começa com o conjunto 000 n vezes, inclusive nenhuma, ou com um n vezes, inclusive nenhuma"
+"Linguagem que começa com o conjunto 000 n vezes, inclusive nenhuma, ou com um n vezes, inclusive nenhuma."
 i- ( 0* | 0*11 (1 | 00*11)*) (ε | 00* )
-"linguagem que começa com zero n vezes, inclusive nenhuma, ou começa com zero n vezes, inclusive nenhuma, seguido de 11, seguido de um n vezes, inclusive nenhuma, ou 0011 n vezes, inclusive nenhuma, seguido de 00 n vezes, inclusive nenhuma"
+"Linguagem que começa com zero n vezes, inclusive nenhuma, ou começa com zero n vezes, inclusive nenhuma, seguido de 11, seguido de um n vezes, inclusive nenhuma, ou 0011 n vezes, inclusive nenhuma, seguido de 00 n vezes, inclusive nenhuma."
 
 2. Sobre o Σ={a,b}, defina expressões regulares que representam as linguagens
 cujas sentenças estão descritas a seguir:
@@ -72,6 +72,14 @@ b) O conjunto de todos os strings com um número igual de 0's e 1's, tais que ne
 Não foi possível completar o exercício
 c) O conjunto de strings de 0's e 1's cujo número de 0's é divisível por 5 e cujo número de 1's é par.
 Não foi possível completar o exercício
+
+Exercício 3.1.4: Forneça descrições em português das linguagens correspondentes às seguintes expressões regulares:
+a) (1+ε)(00*1)*0*.
+"Linguagem que começa com apenas um 1 ou nada, seguido do seguinte conjunto que aparece n vezes, inclusive nenhuma: 00 n vezes, inclusive nenhuma, seguido de 1. Conjunto esse seguido por 0 n vezes, inclusive nenhuma."
+b) (0*1*)*000(0+1)*.
+"Linguagem que começa com o seguinte conjunto que aparece n vezes, inclusive nenhuma: 0 n vezes, inclusive nenhuma, seguido de 1 n vezes, inclusive nenhuma. Conjunto seguido de 000, seguido de 0 ou 1 n vezes, inclusive nenhuma."
+c) (0+10)*1*.
+"Linguagem que inicia com 0 ou 10, ambos n vezes, inclusive nenhuma, seguido de 1 n vezes, inclusive nenhuma."
 
 4. Faça um simulador para Expressões Regulares (qualquer linguagem de programação)
 
